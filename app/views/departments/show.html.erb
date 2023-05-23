@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department</title>
+  </head>
+  
+  <body>
+    <center>
+      <h2 style="padding:10px">Department Info</h2>
+      <table cellpadding="7" bordered>
+        <thead>
+          <tr>
+            <th>DepId</th>
+            <th>Name</th>
+            <th>Chairman</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @department.id %></td>
+            <td><%= @department.name %></td>
+            <td><%= @department.chairman %></td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <%= link_to 'Edit', edit_department_path(@department) %> <br>
+        <%= link_to 'Destroy', department_path(@department), data:{ turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </ul>
+
+      <hr>
+      <h3 style="padding:10px">Employees Info</h3>
+      <table cellpadding="7" bordered>
+        <thead>
+          <tr>
+            <th>EmpId</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Salary</th>
+            <th>Manager_Id</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @department.employees %>
+        </tbody>
+      </table>
+      <hr>
+      <h3 style="padding:10px">Add Employee</h3>
+      <%= render 'employees/form' %>
+    </center>
+  </body>
+</html>

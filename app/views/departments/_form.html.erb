@@ -1,0 +1,22 @@
+<center>
+  <h3>Enter Department Details</h3>
+  <%= form_with model: @department do |form| %>
+    <div>
+      <%= form.label :name %> <br>
+      <%= form.text_field :name %>
+      <% @department.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :chairman %> <br>
+      <%= form.text_field :chairman %>
+      <% @department.errors.full_messages_for(:chairman).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div style="padding:5px">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</center>

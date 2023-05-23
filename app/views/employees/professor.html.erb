@@ -1,0 +1,27 @@
+<center>
+  <h2>Lecturers</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>EmployeeId</th>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Salary</th>
+        <th>Manager</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @professors.each do |professor| %>
+        <tr>
+          <td> <%= professor.id %> </td>
+          <td> <%= professor.name %> </td>
+          <td> <%= professor.designation %> </td>
+          <td> <%= professor.salary %> </td>
+          <td> <%= professor.manager_id %> </td>
+          <td> <%= professor.department.name %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</center>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+  </head>
+  <style>
+    h2{
+        padding: 10px
+    }
+  </style>
+  <body>
+    <center>
+      <h2>Departments list</h2>
+      <ul>
+        <% @departments.each do |department| %>
+          
+            <%= link_to department.name, department %> <br>
+          
+        <% end %>
+      </ul>
+      <h3>Create New Department</h3>
+      <%= link_to 'New Department', new_department_path %> <br>
+      <%# <a href="/departments/:department_id/employees">Lecturers</a> %>
+      <%= link_to "Lecturers", department_employees_path(@departments) %>
+    </center>
+  </body>
+</html>

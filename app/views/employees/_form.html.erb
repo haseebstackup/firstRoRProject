@@ -1,0 +1,21 @@
+<%= form_with model: [@department, @department.employees.build ] do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :designation %>
+    <%= form.text_field :designation %>
+  </p>
+  <p>
+    <%= form.label :salary %>
+    <%= form.text_field :salary %>
+  </p>
+  <p>
+    <%= form.label :manager_id %>
+    <%= form.text_field :manager_id %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
